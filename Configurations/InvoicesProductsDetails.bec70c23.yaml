@@ -1,0 +1,29 @@
+id: bec70c23-b541-49c4-a8e5-85b9cabf541c
+type: datasource
+name: InvoicesProductsDetails
+description: InvoicesProductsDetails description
+mode: ReadWrite
+rootEntity: Invoice
+includeAllFields: false
+allowPersistence: false
+fields:
+  - name: invoiceRows
+    includeAllFields: false
+    allowPersistence: false
+    fields:
+      - name: product
+        includeAllFields: false
+        allowPersistence: false
+        fields:
+          - name: type
+          - name: name
+      - name: productId
+      - name: quantity
+  - name: description
+  - name: totalAmount
+  - name: invoiceDate
+  - name: Id
+pageSize: 20
+sort:
+  - field: description
+    direction: Ascending
