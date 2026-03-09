@@ -1,0 +1,32 @@
+id: 916cd57d-6c87-4eb4-8afc-be19d161f3f1
+type: datasource
+name: InvoiceDatasource
+description: Datasource for managing Invoice
+rootEntity: Invoice
+mode: ReadWrite
+includeAllFields: true
+allowPersistence: true
+sort:
+- field: invoiceDate
+  direction: Ascending
+- field: description
+  direction: Descending
+pageSize: 25
+fields:
+- name: invoiceRows
+  type: InvoiceRowEntity
+  isArray: true
+  isOptional: true
+  includeAllFields: true
+  allowPersistence: true
+  fields:
+  - name: product
+    type: ProductEntity
+    isArray: false
+    includeAllFields: false
+    isOptional: true
+    fields:
+    - name: name
+    - name: description
+    - name: suggestedPrice
+    - name: availableItems
